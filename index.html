@@ -1,13 +1,31 @@
-<div class="app_videos">
-    <div class="video_container">
-        <video class="video_player" src="video1.mp4" loop></video>
-        <div class="side_bar">
-            <i class="heart_icon">❤️</i>
-            <i class="share_icon">🚀</i>
-        </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu TikTok Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="feed">
+        <section class="video-container">
+            <video src="https://v1.adsrtc.me/uploads/66099c0177724.mp4" loop muted onclick="togglePlay(this)"></video>
+            <div class="info">
+                <h3>@alisson_dev</h3>
+                <p>Meu primeiro vídeo no estilo TikTok! 🚀</p>
+            </div>
+        </section>
+
+        <section class="video-container">
+            <video src="https://v1.adsrtc.me/uploads/66099c0177724.mp4" loop muted onclick="togglePlay(this)"></video>
+            <div class="info">
+                <h3>@chatfast</h3>
+                <p>Esse app ficou incrível. #webdev</p>
+            </div>
+        </section>
     </div>
-    
-    <div class="video_container">
-        <video class="video_player" src="video2.mp4" loop></video>
-    </div>
-</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
