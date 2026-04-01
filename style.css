@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: black; overflow: hidden; }
+
+.feed {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Faz travar no vídeo */
+}
+
+.video-container {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo preencher a tela sem sobras */
+}
+
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
