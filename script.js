@@ -1,22 +1,29 @@
-// Detecta qual vídeo está na tela
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const video = entry.target.querySelector('video');
-        if (entry.isIntersecting) {
-            video.play(); // Toca o vídeo atual
-        } else {
-            video.pause(); // Pausa o anterior
-        }
+// 1. Sua lista de vídeos (coloque os links dos seus vídeos aqui)
+const meusVideos = [
+    { url: 'video1.mp4', user: '@alisson', desc: 'Meu primeiro Reel!' },
+    { url: 'video2.mp4', user: '@chatfast', desc: 'Testando o app novo' },
+    { url: 'video3.mp4', user: '@dev', desc: 'Programando em Node.js' }
+];
+
+const feed = document.querySelector('.feed');
+
+// 2. Função que cria os vídeos automaticamente na tela
+function carregarFeed() {
+    meusVideos.forEach(videoData => {
+        const section = document.createElement('section');
+        section.className = 'video-container';
+        
+        section.innerHTML = `
+            <video src="${videoData.url}" loop muted playsinline></video>
+            <div class="info">
+                <h3>${videoData.user}</h3>
+                <p>${videoData.desc}</p>
+            </div>
+        `;
+        
+        feed.appendChild(section);
     });
-}, { threshold: 0.7 }); // Só ativa quando 70% do vídeo aparece
-
-// Aplica a regra em todos os containers de vídeo
-document.querySelectorAll('.video-container').forEach(section => {
-    observer.observe(section);
-});
-
-// Função para dar play/pause ao clicar na tela
-function togglePlay(v) {
-    if (v.paused) v.play();
-    else v.pause();
 }
+
+// Executa assim que o site abrir
+carregarFeed();
